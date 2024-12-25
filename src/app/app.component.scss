@@ -1,0 +1,173 @@
+.toolsqa-logo {
+  display: grid;
+  place-items: center;
+}
+
+.body {
+  padding-bottom: 150px;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  background-color: #0c5387;
+}
+
+.banner-design {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 0.2fr 2fr 1fr;
+}
+
+.banner-parallelogram-top {
+  width: 10cqw;
+  height: 1cqw;
+  transform: skew(45deg);
+  background: #33a0c1;
+  position: relative;
+}
+
+.banner-text-left {
+  font-family: Times New Romans;
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner-text-left > span:nth-of-type(1) {
+  font-size: 5.5cqw
+}
+
+.banner-text-left > span:nth-of-type(2) {
+  font-size: 2.5cqw;
+}
+
+.banner-text-left .banner-horizontal-line {
+  border: 1px solid white;
+  width: 59%;
+  margin-bottom: 6%;
+  margin-top: 2%;
+}
+
+.banner-text-left .banner-benefits {
+  display: grid;
+  grid-template-columns: 0.15fr 1fr 0.15fr 1fr;
+  font-size: 1cqw
+}
+
+.material-icons {
+  font-size: 1.5cqw;
+}
+
+.banner-vertical-line {
+  border-left: 2px solid white;
+  width: 4cqw;
+  margin-top: 30%;
+}
+
+.banner-text-right {
+  align-content: center;
+}
+
+.join-button {
+  padding: 1.1cqw 2.5cqw 1.1cqw 1.5cqw;
+  font-size: 1.5cqw;;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  background-color: #33a0c1;
+  border-radius: 2.5cqw;
+  box-shadow: 0 3px #999;
+}
+
+.join-button:hover {
+  background-color: black
+}
+
+.join-button:active {
+  background-color: #33a0c1;
+  box-shadow: 0 1px #1b506d;
+  transform: translateY(2px);
+}
+
+.banner-parallelogram-bottom {
+  width: 10cqw;
+  height: 1cqw;
+  transform: skew(45deg);
+  background: #33a0c1;
+  margin-left: 48%;
+}
+
+.highlight {
+  color: #33a0c1;
+  cursor: pointer;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card {
+  height: 20cqw;
+  margin: 2cqw;
+  background-color: #eeeeee;
+  //display: grid;
+  //grid-template-columns: 1fr;
+  cursor: pointer;
+  border-radius: 4cqw;
+  box-shadow: 5px 10px 10px 1px #999;
+}
+
+.card >span {
+  font-size: 5cqw;
+}
+
+.card:hover {
+  box-shadow: 5px 10px 10px 1px #1b506d;
+}
+
+.card-top {
+  height: 10cqw;
+  border-top-left-radius: 2cqw;
+  border-top-right-radius: 2cqw;
+  background-image: url("https://tinyurl.com/4a72rd69");
+}
+
+.card-icon {
+  text-align: center;
+  position: relative;
+  top: -13%;
+}
+
+.card-icon .material-icons{
+  font-size: 4cqw;
+  border-radius: 3cqw;
+  //position: relative;
+  //top: -59%;
+  padding: 0.5cqw;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+}
+
+.card-bottom {
+  text-align: center;
+  font-size: 1cqw;
+  position: relative;
+  top: -5%;
+}
+
+.card-bottom h1 {
+  margin: 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.5%;
+  background-color: white;
+}
