@@ -1,0 +1,18 @@
+<div class="form-body">
+  <label class="form-label">Full Name</label>
+  <input type="text" [(ngModel)]="name" class="form-input-field" placeholder="Full Name">
+  <label class="form-label">Email</label>
+  <input type="text" [(ngModel)]="email" class="form-input-field" placeholder="name@example.com">
+  <label class="form-label">Current Address</label>
+  <textarea type="text" [(ngModel)]="cAddress" class="form-input-field" placeholder="Current Address"></textarea>
+  <label class="form-label">Permanent Address</label>
+  <textarea type="text" [(ngModel)]="pAddress" class="form-input-field" placeholder="Permanent Address"></textarea>
+</div>
+<button class="submit_button" (click)="submit()">Submit</button>
+<button class="submit_button" (click)="resetFields()">Clear</button>
+<div class="summary-area" *ngIf="submitted">
+  <p><strong>Name: </strong>{{ name }}</p>
+  <p><strong>Email: </strong>{{ email }}</p>
+  <p><strong>Current Address: </strong>{{ cAddress }}</p>
+  <p><strong>Permanent Address: </strong>{{ pAddress }}</p>
+</div>

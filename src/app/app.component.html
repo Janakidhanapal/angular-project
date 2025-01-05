@@ -2,51 +2,6 @@
   <img src="https://demoqa.com/images/Toolsqa.jpg" title="DemoQA" alt="ToolsQA image">
 </div>
 <div class="body">
-  <div class="banner">
-    <div class="banner-design">
-      <div></div>
-      <div class="banner-text-left">
-        <div class="banner-parallelogram-top"></div>
-        <span>Selenium</span>
-        <span>Certification Training</span>
-        <div class="banner-horizontal-line"></div>
-        <div class="banner-benefits">
-          <div [ngClass]="{highlight : icon1}" (mouseover)="icon1=true" (mouseleave)="icon1=false"><span
-            class="material-icons">play_circle</span></div>
-          <div [ngClass]="{highlight : icon1}" (mouseover)="icon1=true" (mouseleave)="icon1=false"><span>Live Instructor led Online Training</span>
-          </div>
-          <div [ngClass]="{highlight : icon2}" (mouseover)="icon2=true" (mouseleave)="icon2=false"><span
-            class="material-icons">calendar_month</span></div>
-          <div [ngClass]="{highlight : icon2}" (mouseover)="icon2=true" (mouseleave)="icon2=false">
-            <span>Weekend Classes</span></div>
-          <div [ngClass]="{highlight : icon3}" (mouseover)="icon3=true" (mouseleave)="icon3=false"><span
-            class="material-icons">assignment</span></div>
-          <div [ngClass]="{highlight : icon3}" (mouseover)="icon3=true" (mouseleave)="icon3=false"><span>Regular Assignments</span>
-          </div>
-          <div [ngClass]="{highlight : icon4}" (mouseover)="icon4=true" (mouseleave)="icon4=false"><span
-            class="material-icons">headphones</span></div>
-          <div [ngClass]="{highlight : icon4}" (mouseover)="icon4=true" (mouseleave)="icon4=false"><span>Lifetime Access to Session Recording</span>
-          </div>
-        </div>
-      </div>
-      <div class="banner-vertical-line"></div>
-      <div class="banner-text-right">
-        <button class="join-button">JOIN NOW</button>
-      </div>
-      <div></div>
-    </div>
-    <div class="banner-parallelogram-bottom"></div>
-  </div>
-  <div class="cards">
-    <div class="card" *ngFor="let card of cards;">
-      <div class="card-top"></div>
-      <div class="card-icon">
-        <span class="material-icons">{{ card.icon }}</span>
-      </div>
-      <div class="card-bottom">
-        <h1>{{ card.name }}</h1>
-      </div>
-    </div>
-  </div>
+  <router-outlet></router-outlet>
   <div class="footer">Developed by Janaki Vigneshwaran ❤️</div>
 </div>

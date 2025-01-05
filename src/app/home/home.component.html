@@ -1,0 +1,40 @@
+<div class="banner">
+    <div class="banner-design">
+        <div></div>
+        <div class="banner-text-left">
+            <div class="banner-parallelogram-top"></div>
+            <span>Selenium</span>
+            <span>Certification Training</span>
+            <div class="banner-horizontal-line"></div>
+            <div class="banner-benefits">
+                <div><span [ngClass]="{highlight : icon1}" (mouseover)="icon1=true" (mouseleave)="icon1=false" class="material-icons">play_circle</span></div>
+                <div><span [ngClass]="{highlight : icon1}" (mouseover)="icon1=true" (mouseleave)="icon1=false">Live Instructor led Online Training</span></div>
+                <div><span [ngClass]="{highlight : icon2}" (mouseover)="icon2=true" (mouseleave)="icon2=false" class="material-icons">calendar_month</span></div>
+                <div><span [ngClass]="{highlight : icon2}" (mouseover)="icon2=true" (mouseleave)="icon2=false">Weekend Classes</span></div>
+                <div><span [ngClass]="{highlight : icon3}" (mouseover)="icon3=true" (mouseleave)="icon3=false" class="material-icons">assignment</span></div>
+                <div><span [ngClass]="{highlight : icon3}" (mouseover)="icon3=true" (mouseleave)="icon3=false">Regular Assignments</span></div>
+                <div><span [ngClass]="{highlight : icon4}" (mouseover)="icon4=true" (mouseleave)="icon4=false" class="material-icons">headphones</span></div>
+                <div><span [ngClass]="{highlight : icon4}" (mouseover)="icon4=true" (mouseleave)="icon4=false">Lifetime Access to Session Recording</span></div>
+            </div>
+        </div>
+        <div class="banner-vertical-line"></div>
+        <div class="banner-text-right">
+            <button class="join-button">JOIN NOW</button>
+        </div>
+        <div></div>
+    </div>
+    <div class="banner-parallelogram-bottom"></div>
+</div>
+<div class="cards">
+    <div class="card" *ngFor="let card of cards;">
+        <a href="/{{card.url}}">
+            <div class="card-top"></div>
+            <div class="card-icon">
+                <span class="material-icons">{{ card.icon }}</span>
+            </div>
+            <div class="card-bottom">
+                <h1>{{ card.name }}</h1>
+            </div>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<p>checkbox works!</p>
+<div class="Tree-node">
+  <ul>
+    <li><span class="parent" (click)="expandHome()">Home</span>
+      <ul class="children" *ngIf="homeExpand">
+        <li><span class="parent" (click)="expandDesktop()">Desktop</span>
+          <ul class="children" *ngIf="desktopExpand">
+            <li><span>Notes</span></li>
+            <li><span>Commands</span></li>
+          </ul>
+        </li>
+        <li><span>Documents</span></li>
+        <li><span>Downloads</span></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+

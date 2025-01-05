@@ -1,0 +1,32 @@
+<div class="body">
+  <div class="container">
+    <div class="left-panel">
+      <button class="dropdown-btn" (click)="accessDropdown()">
+        <div class="material-icons">menu</div>
+        <span>Elements</span>
+        <div class="dropdown-btn-line"></div>
+        <div class="material-icons" id="icon-change">upgrade</div>
+      </button>
+      <div class="dropdown" style="visibility: hidden">
+        <div class="dropdown-container" *ngFor="let element of elements">
+          <div class="dropdown-container-value">
+            <div class="material-icons">token</div>
+            <a (click)="openApp(element.name)">{{element.name}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="center-panel">
+      <div *ngIf="left_menu_btn_click;then content else other_content"></div>
+      <ng-template #content><div class="center-panel-header">{{this.header_name}}</div></ng-template>
+      <ng-template #other_content>Please select an item from left to start practice</ng-template>
+      <div class="center-panel-body" id="center-panel-body-text">
+        <app-textbox *ngIf="displayTextbox"></app-textbox>
+        <app-checkbox *ngIf="displayCheckbox"></app-checkbox>
+        <app-checkbox *ngIf="displayRadioButton"></app-checkbox>
+        <app-checkbox *ngIf="displayWebTables"></app-checkbox>
+      </div>
+    </div>
+    <div class="right-panel"></div>
+  </div>
+</div>

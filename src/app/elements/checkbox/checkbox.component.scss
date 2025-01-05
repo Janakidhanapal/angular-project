@@ -1,0 +1,27 @@
+#myUL {
+  margin: 0;
+  padding: 0;
+}
+
+.parent {
+  cursor: pointer;
+}
+
+.parent::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+//.parent-down::before {
+//  transform: rotate(90deg);
+//}
+
+.children {
+  cursor: pointer;
+}
+
+.active {
+  display: block;
+}
