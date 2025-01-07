@@ -1,18 +1,111 @@
-<p>checkbox works!</p>
-<div class="Tree-node">
+<div class="tree-node">
   <ul>
-    <li><span class="parent" (click)="expandHome()">Home</span>
-      <ul class="children" *ngIf="homeExpand">
-        <li><span class="parent" (click)="expandDesktop()">Desktop</span>
-          <ul class="children" *ngIf="desktopExpand">
-            <li><span>Notes</span></li>
-            <li><span>Commands</span></li>
+    <li>
+      <div class="level-one folder">
+        <span
+          class="material-icons" (click)="homeExpand=!homeExpand; rotateHomeArrow=homeExpand?90:0"
+          [style.transform]="'rotate(' + rotateHomeArrow + 'deg)'"
+        >chevron_right</span>
+        <input type="checkbox" id="parentCheckbox" (change)="homeChecked=!homeChecked">
+        Home
+      </div>
+      <ul class="parent" *ngIf="homeExpand">
+        <li>
+          <div class="level-two folder">
+            <span
+              class="material-icons" (click)="desktopExpand=!desktopExpand; rotateDesktopArrow=desktopExpand?90:0"
+              [style.transform]="'rotate(' + rotateDesktopArrow + 'deg)'"
+            >chevron_right</span>
+            <input type="checkbox" class="childCheckbox" [checked]="homeChecked"
+                   (change)="desktopChecked=!desktopChecked">
+            <span class="parent">Desktop</span>
+          </div>
+          <ul class="level-three file" *ngIf="desktopExpand">
+            <li>
+              <input type="checkbox" [checked]="homeChecked && desktopChecked">
+              <span>Notes</span>
+            </li>
+            <li>
+              <input type="checkbox" [checked]="homeChecked && desktopChecked">
+              <span>Commands</span>
+            </li>
           </ul>
         </li>
-        <li><span>Documents</span></li>
-        <li><span>Downloads</span></li>
+        <li>
+          <div class="level-two folder">
+            <span class="_arrow material-icons" (click)="expandDocument()">chevron_right</span>
+            <input type="checkbox" class="childCheckbox" [checked]="homeChecked">
+            <span class="parent">Documents</span>
+          </div>
+          <ul *ngIf="documentExpand">
+            <li>
+              <div class="level-three folder">
+                <span class="_arrow material-icons" (click)="expandWorkSpace()">chevron_right</span>
+                <input type="checkbox" class="childCheckbox">
+                <span>Workspace</span>
+              </div>
+              <ul class="level-four file" *ngIf="WorkSpaceExpand">
+                <li>
+                  <input type="checkbox">
+                  <span>React</span>
+                </li>
+                <li>
+                  <input type="checkbox">
+                  <span>Angular</span>
+                </li>
+                <li>
+                  <input type="checkbox">
+                  <span>veu</span>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="level-three folder">
+                <span class="_arrow material-icons" (click)="expandOffice()">chevron_right</span>
+                <input type="checkbox" class="childCheckbox">
+                <span>Office</span>
+              </div>
+              <ul class="level-four file" *ngIf="OfficeExpand">
+                <li>
+                  <input type="checkbox">
+                  <span>Public</span>
+                </li>
+                <li>
+                  <input type="checkbox">
+                  <span>Private</span>
+                </li>
+                <li>
+                  <input type="checkbox">
+                  <span>Classified</span>
+                </li>
+                <li>
+                  <input type="checkbox">
+                  <span>General</span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div class="level-two folder">
+            <span class="_arrow material-icons" (click)="expandDownloads()">chevron_right</span>
+            <input type="checkbox" class="childCheckbox" [checked]="homeChecked">
+            <span>Downloads</span>
+          </div>
+          <ul class="level-three file" *ngIf="downloadExpand">
+            <li>
+              <input type="checkbox">
+              <span>Excel File.doc</span>
+            </li>
+            <li>
+              <input type="checkbox">
+              <span>Word File.doc</span>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
+  <div><span>You have selected:{{ value }} </span></div>
 </div>
 

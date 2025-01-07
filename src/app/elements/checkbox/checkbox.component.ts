@@ -11,41 +11,69 @@ import {NgIf} from '@angular/common';
 })
 export class CheckboxComponent {
 
+  rotateHomeArrow: number = 0;
   homeExpand: boolean = false;
+  homeChecked: boolean = false;
+
   desktopExpand: boolean = false;
-  directory = {
-    "Home": {
-      "Desktop": {
-        "Notepad": {},
-        "Commands": {}
-      },
-      "Documents": {
-        "WorkSpace": {
-          "React": {},
-          "Angular": {},
-          "Veu": {}
-        },
-        "Office": {
-          "Public": {},
-          "Private": {},
-          "Classified": {},
-          "General": {}
-        }
-      },
-      "Downloads": {
-        "Word File.doc": {},
-        "Excel File.doc": {}
-      }
-    }
-  }
+  rotateDesktopArrow: number = 0;
+  desktopChecked: boolean = false;
+
+  documentExpand: boolean = false;
+  WorkSpaceExpand: boolean = false;
+  OfficeExpand: boolean = false;
+  downloadExpand: boolean = false;
+  value: string = '';
 
   expandHome() {
-    this.homeExpand = !this.homeExpand;
+    let parentCheckbox = document.getElementById('parentCheckbox') as HTMLInputElement;
+    const childCheckboxes = document.querySelectorAll('input') as NodeListOf<HTMLInputElement>;
+
+    parentCheckbox.addEventListener('change', () => {
+      childCheckboxes.forEach(childCheckbox => {
+        childCheckbox.checked = parentCheckbox.checked;
+      });
+    });
   }
+
+  //   if(element.checked) {
+  //     // let value = document.getElementsByTagName('span')[2].innerHTML;
+  //     this.value = homeElement.value;
+  //   }
+  //   return null;
+
 
   expandDesktop() {
     this.desktopExpand = !this.desktopExpand;
   }
+
+  expandDocument() {
+    this.documentExpand = !this.documentExpand;
+  }
+
+  expandWorkSpace() {
+    this.WorkSpaceExpand = !this.WorkSpaceExpand;
+  }
+
+  expandOffice() {
+    this.OfficeExpand = !this.OfficeExpand;
+  }
+
+  expandDownloads() {
+    this.downloadExpand = !this.downloadExpand;
+  }
+
+  //   document.addEventListener('DOMContentLoaded', () => {
+  //   const parentCheckbox = document.getElementById('parentCheckbox') as HTMLInputElement;
+  //   const childCheckboxes = document.querySelectorAll('.childCheckbox') as NodeListOf<HTMLInputElement>;
+  //
+  //   parentCheckbox.addEventListener('change', () => {
+  //   childCheckboxes.forEach(childCheckbox => {
+  //   childCheckbox.checked = parentCheckbox.checked;
+  // });
+  // });
+  // });
+
 }
 
 
